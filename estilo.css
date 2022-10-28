@@ -1,0 +1,105 @@
+body{
+    width: 375px;
+    height: 667px;
+    background-color: #E5E5E5;
+   
+}
+.topo{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    width: 375px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #ffffff;
+    position: fixed;
+  
+    top: 0;
+    box-sizing: border-box;
+}
+.conteudo{
+ 
+    width: 375px;
+    top: 80px;
+   bottom: 80px;
+   position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  
+}
+.inferior input{
+    outline: 0;
+    border: none;
+}
+.inferior{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    width: 375px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 0px;
+    box-sizing: border-box;
+}
+.msg{
+    box-sizing: border-box;
+    display:flex;
+    align-items: center;
+   
+    height: 50px;
+    width: 100%;
+    margin-bottom: 4px;
+    background-color: white;
+}
+.msg h1{
+ color: #AAAAAA;
+ padding-right: 5px;
+}
+.msg h2{
+ font-weight: bold;
+ padding-right: 5px;
+}
+.msg h3{
+    padding-right: 5px;
+}
+
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    width:375px;
+    height: 100%;  
+    position:fixed;
+    z-index: 2;
+    background-color: white;
+    top: 0;
+}
+.hidden{
+    display:none;
+}
+.login img{
+    width: 130px;
+    margin-bottom: 92px;
+    margin-top: 72px;
+}
+.login input{
+   
+    width: 261px;
+    height:54px ;
+    margin-bottom: 15px;
+    border:1px solid #D7D7D7;
+}
+.buttom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 109px;
+    height:45px ;
+    background-color:#E7E7E7;
+    border-radius:9px ;
+}

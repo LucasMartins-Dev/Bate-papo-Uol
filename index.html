@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat UOL</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="estilo.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>  
+    <div class="login">
+        <div><img src="imagens/logo 1.svg"></div>
+        <div><input type="text" style="text-align:center" placeholder="Digite seu nome" id = "nickname"> </input></div>
+        <div class="buttom" onclick = "entrarnasala()">Entrar</div>
+    </div>
+    <div class="topo">
+        <div><img src="imagens/logo 1.svg"></div>
+        <div><img src="imagens/Vector.svg"></div>
+    </div>
+    <ul class="conteudo"></ul>
+
+    <div class="inferior">
+        <div><input type="text" placeholder="Escreva aqui..." id = "txt"> </input></div>
+        <div onclick="enviarChat()"><img src="imagens/paper.svg"></div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="scripts.js"></script> 
+</body>
+</html>
