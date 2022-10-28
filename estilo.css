@@ -55,15 +55,35 @@ body{
     margin-bottom: 4px;
     background-color: white;
 }
-.msg h1{
+.msg_private{
+    box-sizing: border-box;
+    display:flex;
+    align-items: center;
+   
+    height: 50px;
+    width: 100%;
+    margin-bottom: 4px;
+    background-color:  #FFDEDE;
+}
+.status{
+    box-sizing: border-box;
+    display:flex;
+    align-items: center;
+   
+    height: 50px;
+    width: 100%;
+    margin-bottom: 4px;
+    background-color: #DCDCDC;;
+}
+ h1{
  color: #AAAAAA;
  padding-right: 5px;
 }
-.msg h2{
+ h2{
  font-weight: bold;
  padding-right: 5px;
 }
-.msg h3{
+ h3{
     padding-right: 5px;
 }
 
@@ -102,4 +122,30 @@ body{
     height:45px ;
     background-color:#E7E7E7;
     border-radius:9px ;
+}
+.infos{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    width:259px;
+    height: 100%;  
+    position:fixed;
+    z-index: 3;
+    background-color: white;
+    top: 0;
+    right: 0;
+}
+.tela_back{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    width:375px;
+    height: 100%;  
+    position:fixed;
+    z-index: 2;
+    background-color: blaCK;
+    opacity: 0.8;
+    top: 0;
 }

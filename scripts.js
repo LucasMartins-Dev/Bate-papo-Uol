@@ -16,12 +16,34 @@ function conversa_check(resposta){
    Chat()
 }
 
+
 function Chat(){
    const listaConversas = document.querySelector('.conteudo')
    listaConversas.innerHTML = ''
    for (let i = 0; i<conversas.length;i++){
+      if( conversas[i].text === "entra na sala..."||conversas[i].text === "sai da sala..."){
+         listaConversas.innerHTML += `
+         <li class = "status">
+         <h1>(${conversas[i].time})</h1>
+         <h2>${conversas[i].from} </h2>
+         <h3> : ${conversas[i].text}</h3>
+      </li>
+      `
+      }else if(conversas[i].to === "Todos"){
+
+         listaConversas.innerHTML += `
+         <li class = "msg">
+            <h1>(${conversas[i].time})</h1>
+            <h2>${conversas[i].from} </h2>
+            <h3> para </h3>
+            <h2>${conversas[i].to} </h2>
+            <h3> : ${conversas[i].text}</h3>
+         </li>
+         `
+      }else{
+
       listaConversas.innerHTML += `
-      <li class = "msg">
+      <li class = "msg_private">
          <h1>(${conversas[i].time})</h1>
          <h2>${conversas[i].from} </h2>
          <h3> para </h3>
@@ -30,6 +52,7 @@ function Chat(){
       </li>
       
       `
+   }
    }
 }
 let nick;
@@ -64,4 +87,13 @@ function enviarChat(){
    document.getElementById('txt').value='';
    conectado()
    carregachat()
+}
+
+function acessarmenu(){
+ let val = document.querySelector('.menu_lateral')
+ val.classList.remove('hidden')
+}
+function sairmenu(){
+   let val = document.querySelector('.menu_lateral')
+   val.classList.add('hidden')
 }
