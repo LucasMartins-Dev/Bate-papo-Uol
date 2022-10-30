@@ -71,6 +71,24 @@ body{
     flex-wrap: wrap;
     word-break: break-all;
 }
+.usu{
+    display: flex;
+    align-items: flex-start;
+    justify-content:start;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+.usu img{
+    width: 22px;
+    padding-right: 5px ;
+}
+.tittle{
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+}
 .status{
     box-sizing: border-box;
     display:flex;
@@ -138,7 +156,6 @@ body{
 }
 .infos{
     display: flex;
-    align-items: center;
     justify-content: start;
     flex-direction: column;
     width:259px;
