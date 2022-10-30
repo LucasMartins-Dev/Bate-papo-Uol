@@ -49,28 +49,35 @@ body{
     box-sizing: border-box;
     display:flex;
     align-items: center;
-   
-    height: 50px;
+    padding-left: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100%;
     margin-bottom: 4px;
     background-color: white;
+    flex-wrap: wrap;
+    word-break: break-all;
 }
 .msg_private{
     box-sizing: border-box;
     display:flex;
     align-items: center;
-   
-    height: 50px;
+    padding-left: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100%;
     margin-bottom: 4px;
     background-color:  #FFDEDE;
+    flex-wrap: wrap;
+    word-break: break-all;
 }
 .status{
     box-sizing: border-box;
     display:flex;
     align-items: center;
-   
-    height: 50px;
+    padding-left: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100%;
     margin-bottom: 4px;
     background-color: #DCDCDC;;
@@ -78,13 +85,19 @@ body{
  h1{
  color: #AAAAAA;
  padding-right: 5px;
+ padding-bottom: 5px;
+ padding-top: 5px;
 }
  h2{
  font-weight: bold;
  padding-right: 5px;
+ padding-bottom: 5px;
+ padding-top: 5px;
 }
  h3{
     padding-right: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 
 .login{
