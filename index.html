@@ -27,11 +27,15 @@
             </div>
             <div class="tittle">Escolha a visibilidade:</div>
             <div>
-                <div class="publico">
-                    
+                <div class="publico public">
+                    <img src="imagens/unlocked.svg">
+                    <h3>Público</h3>
+                    <ion-icon name="checkbox" class="check "></ion-icon>
                 </div>
                 <div class="privado">
-
+                    <img src="imagens/locked.svg">
+                    <h3>Reservadamente</h3>
+                    <ion-icon name="checkbox" class="check "></ion-icon>
                 </div>
             </div>
         </div>
@@ -43,11 +47,22 @@
     <ul class="conteudo"></ul>
 
     <div class="inferior">
-        <div><input type="text" placeholder="Escreva aqui..." id = "txt"> </input></div>
+        <div class="destinatario">
+            <input type="text" placeholder="Escreva aqui..." id = "txt"> </input>
+            <h3>Enviar para: Todos (Público)</h3>
+        </div>
         <div onclick="enviarChat()"><img src="imagens/paper.svg"></div>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="scripts.js"></script> 
+    <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
 </body>
 </html>

@@ -1,15 +1,15 @@
 body{
-    width: 375px;
+    width: 100%;
     height: 667px;
     background-color: #E5E5E5;
-   
+    font-family: 'Roboto', sans-serif;
 }
 .topo{
     display:flex;
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    width: 375px;
+    width: 100%;
     padding-left: 20px;
     padding-right: 20px;
     background-color: #ffffff;
@@ -20,7 +20,7 @@ body{
 }
 .conteudo{
  
-    width: 375px;
+    width: 100%;
     top: 80px;
    bottom: 80px;
    position: fixed;
@@ -37,7 +37,7 @@ body{
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    width: 375px;
+    width: 100%;
     padding-left: 20px;
     padding-right: 20px;
     background-color: #ffffff;
@@ -77,17 +77,24 @@ body{
     justify-content:start;
     box-sizing: border-box;
     padding-left: 10px;
-    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
 }
 .usu img{
     width: 22px;
-    padding-right: 5px ;
+    padding-right: 9px ;
+    padding-left: 18px ;
+    padding-bottom: 10px;
 }
 .tittle{
     display: flex;
     justify-content: center;
     font-weight: 700;
     font-size: 16px;
+    line-height: 19px;
+    padding: 40px;
+    flex-wrap: wrap;
+   
 }
 .status{
     box-sizing: border-box;
@@ -117,13 +124,17 @@ body{
     padding-bottom: 5px;
     padding-top: 5px;
 }
-
+.online{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 270px;
+}
 .login{
     display: flex;
     align-items: center;
     justify-content: start;
     flex-direction: column;
-    width:375px;
+    width:100%;
     height: 100%;  
     position:fixed;
     z-index: 2;
@@ -171,11 +182,61 @@ body{
     align-items: center;
     justify-content: start;
     flex-direction: column;
-    width:375px;
+    width:100%;
     height: 100%;  
     position:fixed;
     z-index: 2;
     background-color: blaCK;
     opacity: 0.8;
     top: 0;
+}
+.check{
+    position:absolute;
+    right: 10px;
+    display:none;
+    color: #28BB25;
+  
+    
+}
+.tela .check{
+    display:flex;
+}
+.inferior h3{
+    font-size: 9px;
+}
+.publico{
+    display: flex;
+    align-items: flex-start;
+    justify-content:start;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    position: relative;
+}
+.privado{
+    display: flex;
+    align-items: flex-start;
+    justify-content:start;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    position: relative;
+}
+.publico img{
+    width: 22px;
+    padding-right: 9px ;
+    padding-left: 18px ;
+    padding-bottom: 10px;
+}
+.privado img{
+    width: 22px;
+    padding-right: 9px ;
+    padding-left: 18px ;
+    padding-bottom: 10px;
+}
+.public .check{
+    display:flex;
+}
+.privad .check{
+    display:flex;
 }
