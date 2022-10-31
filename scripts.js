@@ -17,7 +17,7 @@ function errocarregachat(){
 function conversa_check(resposta){
    console.log("chegou")
    conversas = resposta.data;
-   
+   console.log(conversas)
    Chat()
 }
 let conti;
@@ -85,6 +85,7 @@ let nick;
    let entrarnasala = axios.post('https://mock-api.driven.com.br/api/v6/uol/participants ',{
       name: nick
     })
+    pegarusers()
     
  }
  
@@ -105,25 +106,31 @@ console.log("Erro ao entrar na sala")
  function pegarusers(){
     let conectar = axios.get('https://mock-api.driven.com.br/api/v6/uol/participants ')
    conectar.then(listausuarios)
-
+   let selectpublico = document.querySelector('.publico')
+      selectpublico.classList.add('public')
+      let selectprivado = document.querySelector('.privado')
+      selectprivado.classList.remove('privad')
+      tipomensagem = 'Público'
  }
- setInterval(pegarusers,5000)
+ setInterval(pegarusers,10000)
  function listausuarios(resposta){
    usuarios = resposta.data
    console.log(usuarios)
    const listaUsuarios = document.querySelector('.online')
    listaUsuarios.innerHTML = `
-   <div class="usu" id = "0">
+   <div class="usu tela" id = "0" onclick = "selecionar_usuario(this)">
    <img src="imagens/Vector.svg">
    <h3>Todos</h3>
+   <ion-icon name="checkbox" class="check "></ion-icon>
    </div>
    `
  for (let i = 0; i<usuarios.length;i++){
    if(usuarios[i].name !== nick){
       listaUsuarios.innerHTML +=`
-      <div class = "usu" id ="${i+1}">
+      <div class = "usu" id ="${i+1}" onclick = "selecionar_usuario(this)">
       <img src="imagens/usuario.svg">
          <h3>${usuarios[i].name}</h3>
+         <ion-icon name="checkbox" class="check "></ion-icon>
       </div>
       `
    }
@@ -144,7 +151,7 @@ function enviarChat(){
    let enviar = axios.post("https://mock-api.driven.com.br/api/v6/uol/messages",
    {
       from: nick,
-      to: "Mathews",
+      to: usuarioselecionado,
       text: txt,
       type: "message" 
    })
@@ -172,3 +179,38 @@ function sairmenu(){
    let val = document.querySelector('.menu_lateral')
    val.classList.add('hidden')
 }
+let usuarioselecionado = 'Todos'
+let tipomensagem = 'Público'
+
+function selecionar_usuario(botao) {
+   usuarioant = document.querySelector(".tela");
+ 
+   
+   if (usuarioant !== null) {
+     usuarioant.classList.remove("tela");
+   }
+   botao.classList.toggle("tela");
+   console.log(botao.children[1].innerHTML)
+   if(botao.children[1].innerHTML=="Todos"){
+      let selectpublico = document.querySelector('.publico')
+      selectpublico.classList.add('public')
+      let selectprivado = document.querySelector('.privado')
+      selectprivado.classList.remove('privad')
+      tipomensagem = 'Público'
+   }else{
+      let selectpublico = document.querySelector('.publico')
+      selectpublico.classList.remove('public')
+      let selectprivado = document.querySelector('.privado')
+      selectprivado.classList.add('privad')
+      tipomensagem = 'Reservadamente'
+   }
+  usuarioselecionado = botao.children[1].innerHTML
+   console.log(usuarioselecionado)
+   const UsuarioSelect = document.querySelector('.destinatario')
+   UsuarioSelect.innerHTML = ''
+   UsuarioSelect.innerHTML = 
+   `
+   <input type="text" placeholder="Escreva aqui..." id = "txt"> </input>
+   <h3>Enviar para: ${usuarioselecionado} (${tipomensagem})</h3>
+   `
+ }
