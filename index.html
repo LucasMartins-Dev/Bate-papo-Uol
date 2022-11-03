@@ -14,8 +14,8 @@
 <body>  
     <div class="login">
         <div><img src="imagens/logo 1.svg"></div>
-        <div><input type="text" style="text-align:center" placeholder="Digite seu nome" id = "nickname"> </input></div>
-        <div class="buttom" onclick = "entrarnasala()">Entrar</div>
+        <div><input type="text" data-test="input-name" style="text-align:center" placeholder="Digite seu nome" id = "nickname"> </input></div>
+        <div class="buttom" data-test="send-name" onclick = "entrarnasala()">Entrar</div>
     </div>
     <div class="menu_lateral hidden">
         <div onclick = "sairmenu()" class="tela_back"></div>
@@ -42,16 +42,16 @@
     </div>
     <div class="topo">
         <div><img src="imagens/logo 1.svg"></div>
-        <div><img onclick = "acessarmenu()" src="imagens/Vector.svg"></div>
+        <div><img data-test="open-participants" onclick = "acessarmenu()" src="imagens/Vector.svg"></div>
     </div>
     <ul class="conteudo"></ul>
 
     <div class="inferior">
         <div class="destinatario">
-            <input type="text" placeholder="Escreva aqui..." id = "txt"> </input>
-            <h3>Enviar para: Todos (Público)</h3>
+            <input type="text" data-test="input-message" placeholder="Escreva aqui..." id = "txt"> </input>
+            <h3  data-test="recipient">Enviar para: Todos (Público)</h3>
         </div>
-        <div onclick="enviarChat()"><img src="imagens/paper.svg"></div>
+        <div   data-test="send-message" onclick="enviarChat()"><img src="imagens/paper.svg"></div>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

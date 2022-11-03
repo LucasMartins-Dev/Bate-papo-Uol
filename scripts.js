@@ -30,7 +30,7 @@ function Chat(){
       if(conversas[i].to === 'Todos'||conversas[i].to === nick ||conversas[i].from === nick){
          if( conversas[i].text === "entra na sala..."||conversas[i].text === "sai da sala..."){
             listaConversas.innerHTML += `
-            <li class = "status" id ="${i}">
+            <li class = "status" data-test="message" id ="${i}">
             <h1>(${conversas[i].time})</h1>
             <h2>${conversas[i].from} : </h2>
             <h3> ${conversas[i].text}</h3>
@@ -39,7 +39,7 @@ function Chat(){
          }else if(conversas[i].to === "Todos"){
    
             listaConversas.innerHTML += `
-            <li class = "msg" id ="${i}">
+            <li class = "msg" data-test="message" id ="${i}">
                <h1>(${conversas[i].time})</h1>
                <h2>${conversas[i].from} </h2>
                <h3> para </h3>
@@ -50,7 +50,7 @@ function Chat(){
          }else{
    
          listaConversas.innerHTML += `
-         <li class = "msg_private" id ="${i}">
+         <li class = "msg_private" data-test="message" id ="${i}">
             <h1>(${conversas[i].time})</h1>
             <h2>${conversas[i].from} </h2>
             <h3> para </h3>
@@ -118,7 +118,7 @@ console.log("Erro ao entrar na sala")
    console.log(usuarios)
    const listaUsuarios = document.querySelector('.online')
    listaUsuarios.innerHTML = `
-   <div class="usu tela" id = "0" onclick = "selecionar_usuario(this)">
+   <div class="usu data-test="all" tela" id = "0" onclick = "selecionar_usuario(this)">
    <img src="imagens/Vector.svg">
    <h3>Todos</h3>
    <ion-icon name="checkbox" class="check "></ion-icon>
@@ -127,7 +127,7 @@ console.log("Erro ao entrar na sala")
  for (let i = 0; i<usuarios.length;i++){
    if(usuarios[i].name !== nick){
       listaUsuarios.innerHTML +=`
-      <div class = "usu" id ="${i+1}" onclick = "selecionar_usuario(this)">
+      <div class = "usu" data-test="participant" id ="${i+1}" onclick = "selecionar_usuario(this)">
       <img src="imagens/usuario.svg">
          <h3>${usuarios[i].name}</h3>
          <ion-icon name="checkbox" class="check "></ion-icon>
