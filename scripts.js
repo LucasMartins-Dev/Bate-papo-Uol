@@ -79,14 +79,25 @@ function Chat(){
 }
 let nick;
  function entrarnasala(){
-   let hidden = document.querySelector('.login')
-   hidden.classList.add('hidden')
+   pegarusers()
+   let cont = 0;
     nick =  document.getElementById('nickname').value
-   let entrarnasala = axios.post('https://mock-api.driven.com.br/api/v6/uol/participants ',{
-      name: nick
-    })
-    pegarusers()
-    
+    for(let i =0; i<usuarios.length;i++){
+      if(nick == usuarios[i].name){
+         cont = cont+1;
+      }
+    }
+    if(cont === 0){
+      let hidden = document.querySelector('.login')
+      hidden.classList.add('hidden')
+      let entrarnasala = axios.post('https://mock-api.driven.com.br/api/v6/uol/participants ',{
+         name: nick
+       })
+       conectado()
+      
+       
+    }
+   console.log(cont)
  }
  
 function erroentrarnasala(){
